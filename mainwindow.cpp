@@ -19,6 +19,7 @@ void MainWindow::on_pushButton_clicked()
     QString directory = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "/home/alumno", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!directory.isEmpty()) {
         // Do something with the selected directory
+        ui->label->setText(directory); //Muestra la ruta en el label
     }
 }
 
