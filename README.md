@@ -1,4 +1,2 @@
 # Practica8
-# Practica8
-# Practica8
-# Practica8
+-Autor: Roger Negrete
