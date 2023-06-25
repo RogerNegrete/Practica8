@@ -3,6 +3,8 @@
 #include <QFileDialog>
 #include <QMainWindow>
 #include <QListWidget>
+#include <QDateTime>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,7 +20,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
+
 };
 #endif // MAINWINDOW_H

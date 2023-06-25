@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->listWidget, &QListWidget::itemClicked, this, &MainWindow::on_listWidget_itemClicked);  // Nuevo: conectar la señal del itemClicked al slot personalizado.
 }
 
 MainWindow::~MainWindow()
@@ -17,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString directory = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "/home/alumno", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    QString directory = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "C:/Users/steve/OneDriveEscritorio", QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
     if (!directory.isEmpty()) {
         ui->label->setText(directory); // Establecer la ruta de la carpeta en el QLabel
 
@@ -31,3 +32,21 @@ void MainWindow::on_pushButton_clicked()
         }
     }
 }
+
+
+void MainWindow::on_listWidget_itemClicked(QListWidgetItem *item)
+{
+
+        QString fullPath = QDir(ui->label->text()).filePath(item->text()); // Obtiene la ruta completa del archivo/directorio seleccionado
+        QFileInfo fileInfo(fullPath);
+
+        ui->listPropiedades->clear(); // Limpia la lista de propiedades
+        ui->listPropiedades->addItem("Nombre: " + fileInfo.fileName());
+        ui->listPropiedades->addItem("Ruta completa: " + fileInfo.absoluteFilePath());
+        ui->listPropiedades->addItem("Extensión: " + fileInfo.suffix());
+        ui->listPropiedades->addItem("Tamaño: " + QString::number(fileInfo.size()) + " bytes");
+        ui->listPropiedades->addItem(fileInfo.isDir() ? "Es un directorio" : "No es un directorio");
+        ui->listPropiedades->addItem(fileInfo.isFile() ? "Es un archivo" : "No es un archivo");
+        ui->listPropiedades->addItem("Fecha de última modificación: " + fileInfo.lastModified().toString());
+}
+

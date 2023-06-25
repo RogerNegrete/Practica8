@@ -6,29 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>606</height>
+    <width>996</width>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>70</y>
-      <width>771</width>
-      <height>471</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>100</y>
+      <x>170</x>
+      <y>40</y>
       <width>491</width>
       <height>31</height>
      </rect>
@@ -46,8 +36,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>100</y>
+      <x>660</x>
+      <y>40</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -64,8 +54,8 @@
    <widget class="QTextEdit" name="textEdit_2">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>100</y>
+      <x>170</x>
+      <y>40</y>
       <width>561</width>
       <height>31</height>
      </rect>
@@ -74,8 +64,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>110</y>
+      <x>70</x>
+      <y>40</y>
       <width>91</width>
       <height>17</height>
      </rect>
@@ -83,7 +73,6 @@
     <property name="font">
      <font>
       <pointsize>13</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -91,57 +80,112 @@
      <string>Directorio:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>160</y>
-      <width>231</width>
+      <x>70</x>
+      <y>140</y>
+      <width>381</width>
+      <height>251</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>90</y>
+      <width>201</width>
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+      <pointsize>24</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 24pt &quot;Ubuntu&quot;;
-color: rgb(198, 70, 0);</string>
+     <string notr="true">color: rgb(181, 62, 255);
+font: 30 24pt &quot;Ubuntu&quot;;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
     <property name="lineWidth">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="text">
-     <string>Directorios:</string>
+     <string>Propiedades</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QListWidget" name="listPropiedades">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>210</y>
+      <x>520</x>
+      <y>140</y>
       <width>431</width>
-      <height>211</height>
+      <height>251</height>
      </rect>
     </property>
    </widget>
-   <zorder>textEdit</zorder>
+   <widget class="QWidget" name="widgetFondo" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>961</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(40, 77, 85);</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>80</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 24pt &quot;Ubuntu&quot;;
+color: rgb(198, 70, 0);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>3</number>
+     </property>
+     <property name="text">
+      <string>Directorios</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>widgetFondo</zorder>
    <zorder>textEdit_2</zorder>
    <zorder>pushButton</zorder>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
-   <zorder>label_3</zorder>
    <zorder>listWidget</zorder>
+   <zorder>label_4</zorder>
+   <zorder>listPropiedades</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
-     <height>22</height>
+     <width>996</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
